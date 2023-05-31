@@ -2,5 +2,7 @@
 
 - [x] Autenticação via gmail
 - [x] Proteção das páginas
-- [ ] Metadata ao trabalhar com imagens
-- [ ] Desenvolvimento do Header
+- [x] Desenvolvimento do Header
+- [ ] Desenvolvimento do Menu Lateral
+- [ ] Componente do Dashboard Geral
+
