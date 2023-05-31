@@ -1,5 +1,9 @@
-export default function Loading() {
+import { Spinner } from "@/components/core/Spinner";
+
+export default function SignInLoading() {
   return (
-    <h1>Loading...</h1>
+    <div className='flex justify-center items-center h-screen'>
+      <Spinner />
+    </div>
   )
 }
