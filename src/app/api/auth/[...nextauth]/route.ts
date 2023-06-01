@@ -1,9 +1,9 @@
-import NextAuth, { AuthOptions } from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
 const ONE_DAY = 24 * 60 * 60;
 
-export const authOptions: AuthOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID as string,
@@ -18,7 +18,7 @@ export const authOptions: AuthOptions = {
     maxAge: ONE_DAY,
   },
   pages: {
-    signIn: '/auth/signin',
+    signIn: '/signin',
   },
   secret: process.env.JWT_SECRET as string,
 }

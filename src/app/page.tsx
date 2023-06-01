@@ -1,15 +1,12 @@
-'use client'
 import AppLayout from "@/components/core/AppLayout"
-import { useSession } from "next-auth/react";
 import { redirect } from 'next/navigation';
+import { authOptions } from "./api/auth/[...nextauth]/route";
+import { getServerSession } from "next-auth/next";
 
-export default function Home() {
-  const { data: session } = useSession({
-    required: true,
-    onUnauthenticated() {
-      redirect('/signin')
-    },
-  })
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+  if (!session) redirect('/signin');
+
   return (
     <main className="flex justify-center items-center h-screen bg-white">
       <AppLayout>
