@@ -8,10 +8,12 @@ export default async function Home() {
   if (!session) redirect('/signin');
 
   return (
-    <main className="flex justify-center items-center h-screen bg-white">
+    <main className="flex justify-center items-center h-screen">
       <AppLayout>
-        <div>
-          Sou o filho
+        <div className="flex items-start justify-center w-full">
+          <div style={{ height: '95%' }} className="bg-white w-full rounded-3xl">
+
+          </div>
         </div>
       </AppLayout>
     </main>
