@@ -1,8 +1,8 @@
 import Provider from '@/view/components/providers/Provider'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Red_Hat_Display } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const mainFont = Red_Hat_Display({ subsets: ['latin'], variable: '--font-main' });
 
 export const metadata = {
   title: 'Personal Finance',
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <Provider>
-        <body className={inter.className}>
+        <body className={`${mainFont.variable} font-main`}>
           {children}
         </body>
       </Provider>
