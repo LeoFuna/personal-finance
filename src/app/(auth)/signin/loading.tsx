@@ -1,4 +1,4 @@
-import { Spinner } from "@/components/core/Spinner";
+import { Spinner } from "@/view/components/core/Spinner";
 
 export default function SignInLoading() {
   return (

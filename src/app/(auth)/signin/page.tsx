@@ -1,7 +1,7 @@
 import Head from "next/head";
-import AuthProviders from "@/components/auth/AuthProviders";
+import AuthProviders from "@/view/components/auth/AuthProviders";
 import { Suspense } from "react";
-import { Spinner } from "@/components/core/Spinner";
+import { Spinner } from "@/view/components/core/Spinner";
 
 export default async function SignIn() {
   return (
