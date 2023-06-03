@@ -18,8 +18,11 @@ module.exports = {
         main: ['var(--font-main)', ...fontFamily.sans],
       },
       fontSize: {
-        xxm: '0.6rem',
+        xxs: '0.6rem',
       },
+      height: {
+        '2.5/6': '44%'
+      }
     },
     colors: {
       'gray': '#EEEDEB',
