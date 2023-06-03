@@ -5,7 +5,7 @@ export function GeneralDashboard() {
   return (
     <div style={{ height: '95%' }} className="flex items-center justify-center bg-white w-full rounded-3xl space-x-5">
       <div className="flex flex-col items-center w-8/12 h-full">
-        <div className="flex justify-center bg-white w-full h-3/6 space-x-4 rounded-3xl">
+        <div className="flex justify-center bg-white w-full h-2.5/6 space-x-4 rounded-3xl">
           {/* @ts-expect-error Async Server Components */}
           <CreditCard />
           {/* @ts-expect-error Async Server Components */}

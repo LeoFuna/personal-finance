@@ -6,7 +6,7 @@ import { OutcomeSvg } from "../svg/OutcomeSvg";
 
 const MENU_OPTIONS = [
   { menuName: 'Geral', svg: <DashboardSvg /> },
-  { menuName: 'Entradas', svg: <IncomeSvg /> },
+  { menuName: 'Entradas', svg: <IncomeSvg className="w-6 h-6" /> },
   { menuName: 'Saídas', svg: <OutcomeSvg /> }
 ];
 
