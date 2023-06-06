@@ -1,3 +1,4 @@
+import { FirebaseUserRepo } from "@/repository/user/FirebaseUserRepo";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -19,6 +20,26 @@ export const authOptions: NextAuthOptions = {
   },
   pages: {
     signIn: '/signin',
+  },
+  callbacks: {
+    async signIn({ user }) {
+      const userRepo = new FirebaseUserRepo();
+      if (user.email) {
+        try {
+          await userRepo.getUser(user.email);
+          return true;
+        } catch(error: any) {
+          if (error.statusCode === 404) {
+            await userRepo.create(user.email);
+            return true;
+          } else {
+            console.log('Erro Genérico');
+            return '/signin';
+          }
+        }
+      }
+      return '/signin'
+    },
   },
   secret: process.env.JWT_SECRET as string,
 }
