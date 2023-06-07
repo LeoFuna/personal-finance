@@ -1,9 +1,10 @@
 import { dbAdmin } from "@/db/firebase-admin";
 import { NotFound } from "@/entities/exceptions";
-import { UserOnApp, UserRepository } from "@/interfaces/user";
+import { UserOnApp } from "@/interfaces/user";
+import { UserRepository } from ".";
 
-export class FirebaseUserRepo implements UserRepository {
-  async getUser(email: string): Promise<UserOnApp> {
+export class FirebaseUserRepo extends UserRepository {
+  async getUnique(email: string): Promise<UserOnApp> {
     const userRef = dbAdmin.collection('users').doc(email);
     const userDoc = await userRef.get();
     if(!userDoc.exists) {
@@ -13,8 +14,7 @@ export class FirebaseUserRepo implements UserRepository {
     return userDoc.data() as UserOnApp;
   };
 
-  async create(email: string): Promise<UserOnApp> {
-    const currentDate = new Date();
+  async create(email: string, { currentDate }: { currentDate: Date }): Promise<UserOnApp> {
     await dbAdmin.collection('users').doc(email).set({ email, createdAt: currentDate });
 
     return {
