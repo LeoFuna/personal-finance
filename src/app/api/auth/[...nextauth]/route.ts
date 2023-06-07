@@ -1,4 +1,5 @@
 import { FirebaseUserRepo } from "@/repository/user/FirebaseUserRepo";
+import { UserService } from "@/services/user";
 import NextAuth, { NextAuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -23,14 +24,14 @@ export const authOptions: NextAuthOptions = {
   },
   callbacks: {
     async signIn({ user }) {
-      const userRepo = new FirebaseUserRepo();
+      const userService = new UserService(new FirebaseUserRepo());
       if (user.email) {
         try {
-          await userRepo.getUser(user.email);
+          await userService.getUnique(user.email);
           return true;
         } catch(error: any) {
           if (error.statusCode === 404) {
-            await userRepo.create(user.email);
+            await userService.create(user.email, { currentDate: new Date() });
             return true;
           } else {
             console.log('Erro Genérico');
