@@ -1,12 +1,10 @@
-import { IncomeSvg } from "../svg/IncomeSvg";
-import { IncomeCard } from "./IncomeCard";
+import { IncomeSvg } from '../svg/IncomeSvg';
+import { IncomeCard } from './IncomeCard';
 
 export async function IncomeSection() {
   return (
     <div className="flex flex-col w-6/12 h-full">
-      <h1 className="text-blue font-bold mt-4">
-        Entradas à receber
-      </h1>
+      <h1 className="text-blue font-bold mt-4">Entradas à receber</h1>
       <div className="flex items-center h-4/6 justify-start space-x-5 w-full my-auto">
         <IncomeCard
           cardTitle="Freelancer"
@@ -22,5 +20,5 @@ export async function IncomeSection() {
         />
       </div>
     </div>
-  )
+  );
 }

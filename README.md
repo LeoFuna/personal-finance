@@ -7,4 +7,3 @@
 - [x] Ajustes e organizaçao dos estilos para Desktop e Laptop
 - [x] Dashboard geral area do cartao de crédito e Entradas
 - [ ] Desenvolver a lógica das rotas de api
-

@@ -1,8 +1,8 @@
-import AppLayout from "@/view/components/core/AppLayout"
+import AppLayout from '@/view/components/core/AppLayout';
 import { redirect } from 'next/navigation';
-import { authOptions } from "./api/auth/[...nextauth]/route";
-import { getServerSession } from "next-auth/next";
-import { GeneralDashboard } from "@/view/components/dashboard/GeneralDashboard";
+import { authOptions } from './api/auth/[...nextauth]/route';
+import { getServerSession } from 'next-auth/next';
+import { GeneralDashboard } from '@/view/components/dashboard/GeneralDashboard';
 
 export default async function Home() {
   const session = await getServerSession(authOptions);
@@ -16,5 +16,5 @@ export default async function Home() {
         </div>
       </AppLayout>
     </main>
-  )
+  );
 }

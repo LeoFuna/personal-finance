@@ -1,6 +1,6 @@
-import { Service } from "@/interfaces/service";
-import { UserOnApp } from "@/interfaces/user";
-import { UserRepository } from "@/repository/user";
+import { Service } from '@/interfaces/service';
+import { UserOnApp } from '@/interfaces/user';
+import { UserRepository } from '@/repository/user';
 
 export class UserService implements Service {
   constructor(private userRepository: UserRepository) {}
@@ -8,10 +8,13 @@ export class UserService implements Service {
   async getUnique(email: string): Promise<UserOnApp> {
     // Validaçao aqui
     return await this.userRepository.getUnique(email);
-  };
+  }
 
-  async create(email: string, payload: { currentDate: Date }): Promise<UserOnApp> {
+  async create(
+    email: string,
+    payload: { currentDate: Date }
+  ): Promise<UserOnApp> {
     // Validaçao aqui
-    return await this.userRepository.create(email, payload)
-  };
+    return await this.userRepository.create(email, payload);
+  }
 }

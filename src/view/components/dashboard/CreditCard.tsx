@@ -1,5 +1,5 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { getServerSession } from "next-auth/next";
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { getServerSession } from 'next-auth/next';
 
 export async function CreditCard() {
   const session = await getServerSession(authOptions);
@@ -14,9 +14,11 @@ export async function CreditCard() {
         </div>
         <div>
           <p className="text-xxs text-white">Nome</p>
-          <p className="text-xs font-semibold text-white">{session?.user?.name}</p>
+          <p className="text-xs font-semibold text-white">
+            {session?.user?.name}
+          </p>
         </div>
       </div>
     </div>
-  )
+  );
 }

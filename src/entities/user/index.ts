@@ -1,4 +1,4 @@
-import { UserOnApp } from "@/interfaces/user";
+import { UserOnApp } from '@/interfaces/user';
 
 export class User implements UserOnApp {
   email: string;
@@ -6,7 +6,7 @@ export class User implements UserOnApp {
 
   constructor({ email, createdAt }: UserOnApp) {
     this.email = email;
-    this.createdAt = createdAt
+    this.createdAt = createdAt;
   }
 
   getEmail() {

@@ -1,7 +1,7 @@
-import { FirebaseUserRepo } from "@/repository/user/FirebaseUserRepo";
-import { UserService } from "@/services/user";
-import NextAuth, { NextAuthOptions } from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
+import { FirebaseUserRepo } from '@/repository/user/FirebaseUserRepo';
+import { UserService } from '@/services/user';
+import NextAuth, { NextAuthOptions } from 'next-auth';
+import GoogleProvider from 'next-auth/providers/google';
 
 const ONE_DAY = 24 * 60 * 60;
 
@@ -29,7 +29,7 @@ export const authOptions: NextAuthOptions = {
         try {
           await userService.getUnique(user.email);
           return true;
-        } catch(error: any) {
+        } catch (error: any) {
           if (error.statusCode === 404) {
             await userService.create(user.email, { currentDate: new Date() });
             return true;
@@ -39,12 +39,12 @@ export const authOptions: NextAuthOptions = {
           }
         }
       }
-      return '/signin'
+      return '/signin';
     },
   },
   secret: process.env.JWT_SECRET as string,
-}
+};
 
-const handler = NextAuth(authOptions)
+const handler = NextAuth(authOptions);
 
-export { handler as GET, handler as POST }
+export { handler as GET, handler as POST };

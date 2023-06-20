@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky install",
+    "prettier": "prettier --write ."
   },
   "dependencies": {
     "@types/node": "20.2.5",
@@ -24,7 +26,10 @@
     "tailwindcss": "3.3.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
     "eslint": "^8.41.0",
+    "husky": "^8.0.3",
     "prettier": "^2.8.8",
     "typescript": "^5.0.4"
   }

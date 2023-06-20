@@ -1,8 +1,12 @@
-import React from "react";
-import Header from "./Header";
-import { SideMenu } from "./SideMenu";
+import React from 'react';
+import Header from './Header';
+import { SideMenu } from './SideMenu';
 
-export default function AppLayout({ children }: { children: React.ReactElement }) {
+export default function AppLayout({
+  children,
+}: {
+  children: React.ReactElement;
+}) {
   return (
     <div className="flex flex-col bg-gray h-4/5 w-4/5 rounded-3xl">
       <Header />
@@ -11,5 +15,5 @@ export default function AppLayout({ children }: { children: React.ReactElement }
         {children}
       </div>
     </div>
-  )
+  );
 }
