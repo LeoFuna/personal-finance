@@ -31,10 +31,15 @@ export const authOptions: NextAuthOptions = {
           return true;
         } catch (error: any) {
           if (error.statusCode === 404) {
-            await userService.create(user.email, { currentDate: new Date() });
-            return true;
+            return userService
+              .create(user.email, { currentDate: new Date() })
+              .then(() => true)
+              .catch(() => {
+                console.log('Erro interno, tente novamente...');
+                return '/signin';
+              });
           } else {
-            console.log('Erro Genérico');
+            console.error(error);
             return '/signin';
           }
         }
