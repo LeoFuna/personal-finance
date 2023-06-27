@@ -6,7 +6,7 @@ export async function CreditCard() {
 
   return (
     <div className="flex flex-col w-5/12 h-full">
-      <h1 className="text-blue font-bold mt-4">Geral</h1>
+      <h1 className="section-title">Geral</h1>
       <div className="flex flex-col justify-end py-6 px-4 space-y-2 bg-card bg-no-repeat bg-contain h-4/6 my-auto rounded-2xl">
         <div>
           <p className="text-xxs text-white">Cliente desde</p>
