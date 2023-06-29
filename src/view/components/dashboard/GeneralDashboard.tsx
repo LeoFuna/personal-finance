@@ -1,6 +1,7 @@
 import { CreditCard } from './CreditCard';
 import { IncomeSection } from './IncomeSection';
 import Transactions from './Transactions';
+import VariableCostsTable from './VariableCostsTable';
 
 export function GeneralDashboard() {
   return (
@@ -22,17 +23,21 @@ export function GeneralDashboard() {
       </div>
       <div className="w-3/12 h-full flex justify-center items-center">
         <div className="bg-gray w-full h-5/6 rounded-2xl">
-          <h1>Saldo do Mes</h1>
-          <p>R$ 250,00</p>
-          <h1>Saldo Custos Variáveis</h1>
-          <p>R$ - 50,00</p>
-          <h1>Custos Variáveis</h1>
-          {/* Esse caso aqui provavelmente teremos que pensa rnuma paginaçao para trazer os dados */}
-          {/* Caso haja muitos custos variáveis */}
-          <div className="flex">
-            <p>Previsto: X</p>
-            <p>Realizado: Y</p>
-          </div>
+          <section className="ml-auto flex flex-col">
+            <div className="m-4">
+              <h1 className="text-blue opacity-50 font-semibold text-sm">
+                Saldo do Mes
+              </h1>
+              <p className="text-xl text-blue font-bold">R$ 250,00</p>
+            </div>
+            <div className="m-4">
+              <h1 className="text-blue opacity-50 font-semibold text-sm">
+                Saldo Custos Variáveis
+              </h1>
+              <p className="text-xl text-blue font-bold">R$ - 50,00</p>
+            </div>
+          </section>
+          <VariableCostsTable />
         </div>
       </div>
     </div>
